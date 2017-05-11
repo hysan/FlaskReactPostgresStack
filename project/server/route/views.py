@@ -1,4 +1,4 @@
-# project/server/example/views.py
+# project/server/route/views.py
 
 
 from flask import Blueprint, render_template

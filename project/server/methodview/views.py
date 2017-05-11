@@ -1,4 +1,4 @@
-# project/server/landing/views.py
+# project/server/methodview/views.py
 
 
 from flask import Blueprint, render_template
