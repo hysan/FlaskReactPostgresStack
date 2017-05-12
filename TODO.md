@@ -5,7 +5,9 @@ Possible improvements to be made to the boilerplate project.
 * Integrate [gulp-livereload](https://github.com/vohof/gulp-livereload).
 * Integrate some sort of css framework like Bootstrap.
 * Include boilerplate code for session based logins for normal web views.
+* Example code in React for keeping [long term sessions](https://www.reddit.com/r/reactjs/comments/4dw782/what_is_the_best_way_to_maintain_users_session_in/) (cookies, local storage, etc.).
 * Refactor JWT code to use decorators (more DRY).
+    * OR refactor to use [@app.before_request to handle JWT](http://www.fudzilla.tech/2016/12/12/flask-rest-service-with-jwt/).
 * Include examples of how to restrict REST API endpoints with JWT decorators both within the auth module and outside of it.
 * Boilerplate for Web Sockets that are projected by some sort of security (JWT or otherwise).
 * Unit tests that hit the REST API externally. Something that can be used with CI.
@@ -20,9 +22,16 @@ Possible improvements to be made to the boilerplate project.
 * Integrate [Flask-Admin](https://flask-admin.readthedocs.io/en/latest/).
 * Integrate [Flask-API](http://www.flaskapi.org) though this is probably too much. This really is an optional thing.
 * Integrate [Flask-RESTful](https://flask-restful.readthedocs.io/en/0.3.5/) though this is probably a bit much as straight Flask with Blueprints already works very well.
+* Replace [gulp with webpack](https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/#building-_real_-routes) - [HN Discussion on React Tutorial: Cloning Yelp Tutorial](https://news.ycombinator.com/item?id=11778663)
+* Integrate [socket.io](https://github.com/raineroviir/react-redux-socketio-chat).
+* [Fetch / POST / GET example code](https://github.com/pusher-community/react-realtime-chat) or a util library for common functions.
+* [AJAX example code in React](https://www.reddit.com/r/reactjs/comments/4pbq2x/why_isnt_ajax_present_in_many_examples_of/).
+* [Implement CORS](https://keathmilligan.net/jwt-authentication-with-flask-and-angular-2-a-simple-end-to-end-example/) since that probably will be needed for React Native communication.
+* Add example middleware for logging.
 
 Things to read to better understand Flask, React, etc. These may lead to restructuring the project for better clarity and flexibility in the future.
 
+* [flask-restless-security](https://github.com/graup/flask-restless-security) - This project is basically the same exact thing that I want to accomplish with my boilerplate project. This should be the first thing to compare against.
 * [Designing a RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
 * [Flask-Potion: REST framework for Flask, now supports Peewee](https://news.ycombinator.com/item?id=10284056)
 * [Looking For Flask Restful API Design Examples](https://www.reddit.com/r/flask/comments/2ggv04/looking_for_flask_restful_api_design_examples/)
