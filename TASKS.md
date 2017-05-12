@@ -22,8 +22,8 @@ python manage.py cov
 
 ```sh
 psql
->     create database flask_jwt_auth
->     create database flask_jwt_auth_test
+>     create database flask_jwt_auth;
+>     create database flask_jwt_auth_test;
 >     \q
 
 python manage.py create_db
@@ -45,6 +45,17 @@ export APP_SETTINGS="project.server.config.DevelopmentConfig"
 export APP_SETTINGS="project.server.config.ProductionConfig"
 
 export SECRET_KEY="change_me"
+```
+
+### Complete Clean and Reset
+
+```sh
+cd <project root>
+rm -rf node_modules
+rm -rf migrations
+rm -rf tmp
+rm -rf project/server/static/bower_components
+# Drop database tables using pgAdmin 4.
 ```
 
 ## Python
