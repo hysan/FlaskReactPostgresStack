@@ -30,6 +30,10 @@ var DynamicSearch = React.createClass({
         <ul>
           { countries.map(function(country){ return <li>{country.name} </li> }) }
         </ul>
+        <hr/>
+        <form action="/methodview/template" method="post">
+          <button name="foo" value="bar">Test Post to MethodView</button>
+        </form>
       </div>
     )
   }

@@ -39,6 +39,9 @@ class ExampleTemplatePage(MethodView):
     def get(self):
       return render_template('index.html')
 
+    def post(self):
+      return render_template('hello.html')
+
 static_view = ExamplePage.as_view('static_page')
 templated_view = ExampleTemplatePage.as_view('templated_page')
 
@@ -50,5 +53,5 @@ methodview_blueprint.add_url_rule(
 methodview_blueprint.add_url_rule(
     '/template',
     view_func=templated_view,
-    methods=['GET']
+    methods=['GET', 'POST']
 )
