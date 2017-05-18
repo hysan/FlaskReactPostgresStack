@@ -183,22 +183,22 @@ logout_view = LogoutAPI.as_view('logout_api')
 
 # add Rules for API Endpoints
 auth_blueprint.add_url_rule(
-    '/auth/register',
+    '/register',
     view_func=registration_view,
     methods=['POST']
 )
 auth_blueprint.add_url_rule(
-    '/auth/login',
+    '/login',
     view_func=login_view,
     methods=['POST']
 )
 auth_blueprint.add_url_rule(
-    '/auth/status',
+    '/status',
     view_func=user_view,
     methods=['GET']
 )
 auth_blueprint.add_url_rule(
-    '/auth/logout',
+    '/logout',
     view_func=logout_view,
     methods=['POST']
 )

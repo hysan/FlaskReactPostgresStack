@@ -43,12 +43,12 @@ static_view = ExamplePage.as_view('static_page')
 templated_view = ExampleTemplatePage.as_view('templated_page')
 
 methodview_blueprint.add_url_rule(
-    '/methodview/static',
+    '/static',
     view_func=static_view,
     methods=['GET']
 )
 methodview_blueprint.add_url_rule(
-    '/methodview/template',
+    '/template',
     view_func=templated_view,
     methods=['GET']
 )

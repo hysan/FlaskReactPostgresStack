@@ -18,11 +18,11 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 from project.server.auth.views import auth_blueprint
-app.register_blueprint(auth_blueprint)
+app.register_blueprint(auth_blueprint, url_prefix='/auth')
 from project.server.methodview.views import methodview_blueprint
-app.register_blueprint(methodview_blueprint)
+app.register_blueprint(methodview_blueprint, url_prefix='/methodview')
 from project.server.route.views import route_blueprint
-app.register_blueprint(route_blueprint)
+app.register_blueprint(route_blueprint, url_prefix='/route')
 
 from flask import render_template
 
