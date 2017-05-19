@@ -28,6 +28,8 @@ Possible improvements to be made to the boilerplate project.
 * [AJAX example code in React](https://www.reddit.com/r/reactjs/comments/4pbq2x/why_isnt_ajax_present_in_many_examples_of/).
 * [Implement CORS](https://keathmilligan.net/jwt-authentication-with-flask-and-angular-2-a-simple-end-to-end-example/) since that probably will be needed for React Native communication.
 * Add example middleware for logging.
+* Integrate Redux.
+    * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate project for Python/Flask JWT and Javascript/React/Redux with Material UI. Definitely look at this when I need to implement Redux as it seems like a much more robust boilerplate that is decently new.
 
 Things to read to better understand Flask, React, etc. These may lead to restructuring the project for better clarity and flexibility in the future.
 
@@ -76,3 +78,11 @@ Things to read to better understand Flask, React, etc. These may lead to restruc
 * [Python Web Applications With Flask - Part III](https://realpython.com/blog/python/python-web-applications-with-flask-part-iii/)
 * [Getting Started With Bootstrap 3](https://realpython.com/blog/python/getting-started-with-bootstrap-3/)
 * [Headless Selenium Testing With Python and PhantomJS](https://realpython.com/blog/python/headless-selenium-testing-with-python-and-phantomjs/)
+* Integrate [create-react-app](https://github.com/facebookincubator/create-react-app) for more frontend and dev features which would also make this more backend agnostic. Some important notes:
+    * [It's officially supported by Facebook.](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html)
+    * It's [constantly updated](https://facebook.github.io/react/blog/2017/05/18/whats-new-in-create-react-app.html) with new and better features for devs. [Reception is quite positive.](https://news.ycombinator.com/item?id=14373178)
+    * [There is support for building to deploy on production.](https://github.com/facebookincubator/create-react-app/issues/432)
+    * Separating them could lead to a better architecture (can swap out backends or frontends more easily). [See how it works here.](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) This works quite well if you design your Reactjs side with [relative paths](http://stackoverflow.com/questions/42823272/integrate-react-app-into-flask-app). [Docs here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#building-for-relative-paths) and could end up more robust in the future ([issue](https://github.com/facebookincubator/create-react-app/issues/248)).
+    * Quite a few [guides](https://medium.com/@diamondgfx/learning-react-with-create-react-app-part-1-a12e1833fdc) exist to get you started.
+* [flask-react](https://github.com/abhiomkar/flask-react) boilerplate project (kinda old)
+* [flask-react-boilerplate](https://github.com/alexkuz/flask-react-boilerplate) boilerplate project (newer, still a bit old)
