@@ -96,8 +96,8 @@ Create the databases in `psql`:
 
 ```sh
 $ psql
-# create database flask_jwt_auth
-# create database flask_jwt_auth_test
+# create database flask_jwt_auth;
+# create database flask_jwt_auth_test;
 # \q
 ```
 
