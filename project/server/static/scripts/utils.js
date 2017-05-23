@@ -16,7 +16,7 @@ const REST_ERRORS = {
     FETCH_TIMEOUT: '===== Fetch Request Timed Out ====='
 }
 
-var loginByJWT = async function (email, password) {
+export async function loginByJWT(email, password) {
     var payload = {
         email: email,
         password: password
@@ -61,7 +61,7 @@ var loginByJWT = async function (email, password) {
     return response;
 }
 
-var getUserData = async function (token) {
+export async function getUserData(token) {
     // Edit this to be a reasonable value.
     const TIMEOUT = 3000;
 
@@ -105,6 +105,3 @@ var getUserData = async function (token) {
 
     return response;
 }
-
-exports.loginByJWT = loginByJWT;
-exports.getUserData = getUserData;

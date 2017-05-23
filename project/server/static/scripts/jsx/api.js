@@ -1,5 +1,4 @@
-var loginByJWT = require('../utils.js').loginByJWT;
-var getUserData = require('../utils.js').getUserData;
+import { loginByJWT, getUserData } from '../utils.js';
 
 var DemoFetch = React.createClass({
     // sets initial state
