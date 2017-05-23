@@ -89,7 +89,7 @@ export async function getUserData(token) {
         console.log("Response status: " + status);
         console.log("Data: " + JSON.stringify(data));
         return {
-            success: status == 'success' ? true : false,
+            success: status === 'success' ? true : false,
             data: '{\n  data: ' + data.user_id +
                 '\n  email: ' + data.email +
                 '\n  admin: ' + data.admin +
