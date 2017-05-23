@@ -98,7 +98,7 @@ export async function getUserData(token) {
     }).catch((error) => {
         console.log("Failed to get user data." + error);
         return {
-            success: status == 'success' ? true : false,
+            success: false,
             data: error.toString()
         };
     });
