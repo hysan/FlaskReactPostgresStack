@@ -40,7 +40,7 @@ var DemoFetch = React.createClass({
                 <button
                     onClick={async () => {
                         console.log('submit to login');
-                        result = await loginByJWT(this.state.email, this.state.password);
+                        let result = await loginByJWT(this.state.email, this.state.password);
                         if (result.loggedin) {
                             console.log('success!');
                             this.setState({ token: result.token }, () => {
@@ -59,7 +59,7 @@ var DemoFetch = React.createClass({
                 <button
                     onClick={async () => {
                         console.log('go get some user data');
-                        result = await getUserData(this.state.token);
+                        let result = await getUserData(this.state.token);
                         this.setState({ userdata: result.data });
                     }}
                 >
