@@ -8,10 +8,12 @@ This is a boilerplate project built around these core technologies:
 * Gulp
 * Bower
 * Browserify
+* Babel
 * PyJWT
 * SQLAlchemy
 * psycopg2
 * npm
+* Flask-CORS
 
 The responsibilities split into groups are as follows:
 
@@ -23,6 +25,7 @@ This is the web server that gives us the ability to:
 2. Write web pages - static or dynamic with optional templating (Jinja2, etc.)
 3. Communicate to a database - in this case, PostgresSQL via SQLAlchemy ORM & psycopg2
 4. Protect our site with JWT via PyJWT - implemented in the boilerplate already
+5. Optionally allow CORS to specified resources.
 
 **React.js**
 
@@ -47,6 +50,7 @@ These will handle management of frontend Javascript packages and compiling them 
 7. Python pip management via requirements.txt
 8. Gulp configured to watch file(s) for changes
 9. Helper scripts for commmon tasks
+10. CORS support
 
 ### Babel Presets and Plugins
 
