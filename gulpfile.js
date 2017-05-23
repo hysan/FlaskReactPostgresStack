@@ -2,16 +2,25 @@
 
 var gulp = require('gulp');
 var gulpBrowser = require("gulp-browser");
-var reactify = require('reactify');
+var babelify = require('babelify');
 var del = require('del');
 var size = require('gulp-size');
 
 
 // tasks
 
+let transforms = [
+  {
+    transform: "babelify",
+    options: {
+      presets: ["react"]
+    },
+  }
+];
+
 gulp.task('transform', function () {
   var stream = gulp.src('./project/server/static/scripts/jsx/*.js')
-    .pipe(gulpBrowser.browserify({transform: ['reactify']}))
+    .pipe(gulpBrowser.browserify(transforms))
     .pipe(gulp.dest('./project/server/static/scripts/js/'))
     .pipe(size());
   return stream;
