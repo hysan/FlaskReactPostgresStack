@@ -13,11 +13,14 @@ let transforms = [
   {
     transform: "babelify",
     options: {
-      presets: [
-        ["env", { experimental: true }],
-        "react"
+      presets: [['env', { modules: false }], "react"],
+      plugins: [
+        'syntax-dynamic-import',
+        'transform-async-to-generator',
+        'transform-regenerator',
+        'transform-runtime'
       ]
-    },
+    }
   }
 ];
 

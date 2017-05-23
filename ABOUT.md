@@ -15,6 +15,7 @@
 ├── gulpfile.js
 ├── manage.py
 ├── package.json
+├── .babelrc
 ├── .bowerrc
 ├── .gitignore
 ├── .python-version
@@ -145,6 +146,11 @@ Only key, non-self explanatory files will be covered.
     * Configuration for Bower.
     * Bower is what is used to install and manage frontend dependencies.
     * For example: react, bootstrap, etc.
+* **.babelrc**
+    * Configuration for Babel.
+    * [Check the docs](https://babeljs.io/docs/usage/babelrc/) to see how to configure it.
+    * Specifically, I'm using the [babel-preset-env](http://babeljs.io/docs/plugins/preset-env/) which has many options.
+    * You need to configure this file in conjunction with your **gulpfile.js** to get Babel to work correctly. And yes, there is a lot that looks like duplicate configuration but it's needed.
 * **.bowerrc**
     * Config file for Bower to define where to place your **bower_components** folder.
 * **gulpfile.js**
