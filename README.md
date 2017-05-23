@@ -32,7 +32,7 @@ This is what we will write the frontend code in. The View in MVC.
 
 This is the chosen database for this stack. While SQLite or MariaDB is also possible, PostgresSQL was chosen because it can scale to a fairly large size without intervention and is easily managed. Combined with Flask and SQLAlchemy, we can also create, migrate, and backup databases very easily.
 
-**npm, Gulp, Bower, Browserify**
+**npm, Gulp, Bower, Browserify, Babel**
 
 These will handle management of frontend Javascript packages and compiling them to be usable by Flask. This includes installing and updating.
 
@@ -47,6 +47,15 @@ These will handle management of frontend Javascript packages and compiling them 
 7. Python pip management via requirements.txt
 8. Gulp configured to watch file(s) for changes
 9. Helper scripts for commmon tasks
+
+### Babel Presets and Plugins
+
+We use Babel to transform our Javascript code via Babelify ([Reactify is now deprecated](https://github.com/andreypopp/reactify)). Babel has a lot of useful options and can help us control what future features we want to support in our Javascript code. The current configuration in our gulpfile has Babel supporting the following:
+
+* As many ES5, ES6, and ES7 features as possibly supported via the [babel-preset-env](https://babeljs.io/docs/plugins/preset-env/) preset. This includes [babel-preset-es2015](https://babeljs.io/docs/plugins/preset-es2015/), [babel-preset-es2016](https://babeljs.io/docs/plugins/preset-es2016/), and [babel-preset-es2017](https://babeljs.io/docs/plugins/preset-es2017/) at the moment. FYI, this is the recommended preset to use instead of the older babel-preset-latest.
+* All the features needed to compile React code via the [babel-preset-react](https://babeljs.io/docs/plugins/preset-react/) preset.
+
+[A good overview of how Browserify + Babelify + Gulp all work together can be read here.](https://medium.com/@hey.aaron/getting-import-export-working-es6-style-using-browserify-babelify-gulp-5hrs-of-life-eca7786e44cc)
 
 ## Basic Setup (first run)
 

@@ -13,7 +13,10 @@ let transforms = [
   {
     transform: "babelify",
     options: {
-      presets: ["react"]
+      presets: [
+        ["env", { experimental: true }],
+        "react"
+      ]
     },
   }
 ];
