@@ -33,3 +33,7 @@ def index():
 @app.route('/hello')
 def hello():
     return render_template('hello.html')
+
+@app.route('/api')
+def api():
+    return render_template('api.html')
