@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 var DynamicSearch = React.createClass({
 
   // sets initial state

@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import { loginByJWT, getUserData } from '../utils.js';
 
 var DemoFetch = React.createClass({
