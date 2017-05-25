@@ -92,7 +92,7 @@ One of our required node modules [doesn't play nicely with pyenv & shims](https:
 ```sh
 cd <project root>
 rm .python-version
-npm install
+yarn
 pyenv local 3.6.1
 ```
 

@@ -12,7 +12,7 @@ This is a boilerplate project built around these core technologies:
 * PyJWT
 * SQLAlchemy
 * psycopg2
-* npm
+* yarn
 * Flask-CORS
 
 The responsibilities split into groups are as follows:
@@ -35,7 +35,7 @@ This is what we will write the frontend code in. The View in MVC.
 
 This is the chosen database for this stack. While SQLite or MariaDB is also possible, PostgresSQL was chosen because it can scale to a fairly large size without intervention and is easily managed. Combined with Flask and SQLAlchemy, we can also create, migrate, and backup databases very easily.
 
-**npm, Gulp, Bower, Browserify, Babel**
+**yarn, Gulp, Bower, Browserify, Babel**
 
 These will handle management of frontend Javascript packages and compiling them to be usable by Flask. This includes installing and updating.
 
@@ -75,7 +75,7 @@ pip install -r requirements.txt
 # Note: You cannot use pyenv here due to this bug:
 #     https://github.com/electron-userland/electron-builder/issues/638
 rm .python-version
-npm install
+yarn
 bower install
 # Put pyenv back:
 pyenv local 3.6.1

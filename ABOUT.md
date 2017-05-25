@@ -15,6 +15,7 @@
 ├── gulpfile.js
 ├── manage.py
 ├── package.json
+├── yarn.lock
 ├── .babelrc
 ├── .bowerrc
 ├── .gitignore
@@ -84,7 +85,7 @@
     * Generated when you create and/or migrate databases via **manage.py**.
 * **node_modules**
     * **.gitignore**
-    * Generated when you run `npm install`.
+    * Generated when you run `yarn`.
     * Contains all of the modules defined in **package.json** along with their dependencies.
 * **project**
     * Directory containing all the source files for the Flask project.
@@ -141,7 +142,10 @@ Only key, non-self explanatory files will be covered.
 * **package.json**
     * Manages all the backend Javascript dependencies that this project has.
     * For example: bower, gulp, browserify, etc.
-    * These are all node packages that will be installed when you run `npm install`.
+    * These are all node packages that will be installed when you run `yarn`.
+* **yarn.lock**
+    * Has information about dependencies that you need for yarn.
+    * Need to check this into version control.
 * **bower.json**
     * Configuration for Bower.
     * Bower is what is used to install and manage frontend dependencies.
