@@ -5,9 +5,8 @@ This is a boilerplate project built around these core technologies:
 * Flask
 * React.js
 * PostgresSQL
-* Gulp
+* webpack
 * Bower
-* Browserify
 * Babel
 * PyJWT
 * SQLAlchemy
@@ -35,7 +34,7 @@ This is what we will write the frontend code in. The View in MVC.
 
 This is the chosen database for this stack. While SQLite or MariaDB is also possible, PostgresSQL was chosen because it can scale to a fairly large size without intervention and is easily managed. Combined with Flask and SQLAlchemy, we can also create, migrate, and backup databases very easily.
 
-**yarn, Gulp, Bower, Browserify, Babel**
+**yarn, webpack, Bower, Babel**
 
 These will handle management of frontend Javascript packages and compiling them to be usable by Flask. This includes installing and updating.
 
@@ -48,19 +47,23 @@ These will handle management of frontend Javascript packages and compiling them 
 5. Unit Testing
 6. Javascript Package Management
 7. Python pip management via requirements.txt
-8. Gulp configured to watch file(s) for changes
+8. webpack + yarn scripts to watch for dev changes
 9. Helper scripts for commmon tasks
 10. CORS support
 
 ### Babel Presets and Plugins
 
-We use Babel to transform our Javascript code via Babelify ([Reactify is now deprecated](https://github.com/andreypopp/reactify)). Babel has a lot of useful options and can help us control what future features we want to support in our Javascript code. The current configuration in our gulpfile has Babel supporting the following:
+We use Babel to transform our Javascript code via webpack. Babel has a lot of useful options and can help us control what future features we want to support in our Javascript code. The current configuration in our webpack config has Babel supporting the following:
 
 * As many ES5, ES6, and ES7 features as possibly supported via the [babel-preset-env](https://babeljs.io/docs/plugins/preset-env/) preset. This includes [babel-preset-es2015](https://babeljs.io/docs/plugins/preset-es2015/), [babel-preset-es2016](https://babeljs.io/docs/plugins/preset-es2016/), and [babel-preset-es2017](https://babeljs.io/docs/plugins/preset-es2017/) at the moment. FYI, this is the recommended preset to use instead of the older babel-preset-latest.
-    * I've included several plugins and set the _modules_ configuration to _false_ in order to get all of the proper syntax working correctly. Ironically, reading the [webpack documentation for Babel config](https://webpack.js.org/guides/code-splitting-async/) is what helped me figure out how to properly configure Babel in gulp to work.
+    * I've included several plugins and set the _modules_ configuration to _false_ in order to get all of the proper syntax working correctly. In particular, the [Code Splitting - Async docs for webpack](https://webpack.js.org/guides/code-splitting-async/) were key to getting all of this to work correctly.
 * All the features needed to compile React code via the [babel-preset-react](https://babeljs.io/docs/plugins/preset-react/) preset.
 
-[A good overview of how Browserify + Babelify + Gulp all work together can be read here.](https://medium.com/@hey.aaron/getting-import-export-working-es6-style-using-browserify-babelify-gulp-5hrs-of-life-eca7786e44cc)
+### webpack Features
+
+I've also implemented some basic features of webpack that should be used in just about every project:
+
+* Code Splitting of Libraries. Specifically for our project, we need _react_ and _react-dom_. We also have the mainifest file implemented to make best use of chunks.
 
 ## Basic Setup (first run)
 
@@ -79,8 +82,8 @@ yarn
 bower install
 # Put pyenv back:
 pyenv local 3.6.1
-# Transform and leave Gulp to watch for file changes:
-gulp
+# Transform and leave webpack running to watch files for changes:
+yarn run watch
 # Now you can continue with the rest of the steps to get to a running Flask server.
 ```
 
@@ -139,12 +142,13 @@ $ python manage.py runserver -h 0.0.0.0 -p 8080
 
 #### List of Test URLs
 
-* [Root init, Route decorator, React via Template + Browserify](http://localhost:5000/index)
+* [Root init, Route decorator, React via Template + webpack Babel transpile](http://localhost:5000/index)
 * [Root init, Route decorator, React embedded in Template](http://localhost:5000/hello)
+* [Root init, Route decorator, React via Template + webpack Babel transpile](http://localhost:5000/api) - This is for testing that the REST API indeed works correctly.
 * [Blueprint, MethodView, static output w/ React](http://localhost:5000/methodview/static)
-* [Blueprint, MethodView, React via Template + Browserify](http://localhost:5000/methodview/template)
+* [Blueprint, MethodView, React via Template + webpack Babel transpile](http://localhost:5000/methodview/template)
 * [Blueprint, Route decorator, static output](http://localhost:5000/route)
-* [Blueprint, Route decorator, React via Template + Browserify](http://localhost:5000/route/index)
+* [Blueprint, Route decorator, React via Template + webpack Babel transpile](http://localhost:5000/route/index)
 
 ### Testing
 

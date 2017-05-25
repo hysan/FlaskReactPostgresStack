@@ -12,9 +12,9 @@
 ├── README.md
 ├── TODO.md
 ├── bower.json
-├── gulpfile.js
 ├── manage.py
 ├── package.json
+├── webpack.config.js
 ├── yarn.lock
 ├── .babelrc
 ├── .bowerrc
@@ -47,12 +47,15 @@
 │   │   │   │   └── style.css
 │   │   │   └── scripts
 │   │   │       ├── js
-│   │   │       │   └── main.js
+│   │   │           ├── main.js
+│   │   │       │   └── api.js
 │   │   │       └── jsx
-│   │   │           └── main.js
+│   │   │           ├── main.js
+│   │   │           └── api.js
 │   │   └── templates
 │   │       ├── hello.html
-│   │       └── index.html
+│   │       ├── index.html
+│   │       └── api.html
 │   └── tests
 │       ├── __init__.py
 │       ├── base.py
@@ -110,10 +113,10 @@
                 * Holds all Javascript and related files.
                 * **js**
                     * Straight up Javascript files written by you.
-                    * Also the place where `gulp` will place the transformed *jsx* files.
+                    * Also the place where `webpack` will place the transformed *jsx* files.
                 * **jsx**
                     * Holds all React.js files.
-                    * Files here will be transformed by running `gulp`.
+                    * Files here will be transformed by running `webpack -p`.
         * **templates**
             * Holds all *HTML* files.
             * These are the files that can be rendered directly via Flask's `render_template` function.
@@ -141,7 +144,7 @@ Only key, non-self explanatory files will be covered.
     * Flask manager script for running various tasks and ultimately running the server.
 * **package.json**
     * Manages all the backend Javascript dependencies that this project has.
-    * For example: bower, gulp, browserify, etc.
+    * For example: bower, webpack, babel, etc.
     * These are all node packages that will be installed when you run `yarn`.
 * **yarn.lock**
     * Has information about dependencies that you need for yarn.
@@ -154,13 +157,13 @@ Only key, non-self explanatory files will be covered.
     * Configuration for Babel.
     * [Check the docs](https://babeljs.io/docs/usage/babelrc/) to see how to configure it.
     * Specifically, I'm using the [babel-preset-env](http://babeljs.io/docs/plugins/preset-env/) which has many options.
-    * You need to configure this file in conjunction with your **gulpfile.js** to get Babel to work correctly. And yes, there is a lot that looks like duplicate configuration but it's needed.
+    * You need to configure this file in conjunction with your **webpack.config.js** to get Babel to work correctly. And yes, there is a lot that looks like duplicate configuration but it's needed.
 * **.bowerrc**
     * Config file for Bower to define where to place your **bower_components** folder.
-* **gulpfile.js**
-    * Defines what happens when you run `gulp`.
-    * You can create different tasks that can be run with `gulp <task>`.
-    * For this project, gulp is used with browserify to transform the files in **project/server/static/scrips/jsx** into Javascript files.
+* **webpack.config.js**
+    * All configuration for webpack - plugins, transforms, etc.
+    * Shortcuts for the various webpack commands will be added to **package.json** as `yarn run` scripts.
+    * For this project, webpack is used with Babel + plugins to transform the files in **project/server/static/scrips/jsx** into Javascript files. It also separates out vendor files like _react_ and _react-dom_ so code can be shared.
 * **project/server/config.py**
     * Contains all configuration for the Flask app.
     * Of importance are the PostgreSQL configs and your SECRET_KEY.
