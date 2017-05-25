@@ -2,7 +2,6 @@
 
 Possible improvements to be made to the boilerplate project.
 
-* Integrate [gulp-livereload](https://github.com/vohof/gulp-livereload).
 * Integrate some sort of css framework like Bootstrap.
 * Include boilerplate code for session based logins for normal web views.
 * Example code in React for keeping [long term sessions](https://www.reddit.com/r/reactjs/comments/4dw782/what_is_the_best_way_to_maintain_users_session_in/) (cookies, local storage, etc.).
@@ -22,11 +21,7 @@ Possible improvements to be made to the boilerplate project.
 * Integrate [Flask-Admin](https://flask-admin.readthedocs.io/en/latest/).
 * Integrate [Flask-API](http://www.flaskapi.org) though this is probably too much. This really is an optional thing.
 * Integrate [Flask-RESTful](https://flask-restful.readthedocs.io/en/0.3.5/) though this is probably a bit much as straight Flask with Blueprints already works very well.
-* Replace [gulp with webpack](https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/#building-_real_-routes) - [HN Discussion on React Tutorial: Cloning Yelp Tutorial](https://news.ycombinator.com/item?id=11778663)
 * Integrate [socket.io](https://github.com/raineroviir/react-redux-socketio-chat).
-* [Fetch / POST / GET example code](https://github.com/pusher-community/react-realtime-chat) or a util library for common functions.
-* [AJAX example code in React](https://www.reddit.com/r/reactjs/comments/4pbq2x/why_isnt_ajax_present_in_many_examples_of/).
-* [Implement CORS](https://keathmilligan.net/jwt-authentication-with-flask-and-angular-2-a-simple-end-to-end-example/) since that probably will be needed for React Native communication.
 * Add example middleware for logging.
 * Integrate Redux.
     * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate project for Python/Flask JWT and Javascript/React/Redux with Material UI. Definitely look at this when I need to implement Redux as it seems like a much more robust boilerplate that is decently new.
