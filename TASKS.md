@@ -54,7 +54,6 @@ cd <project root>
 rm -rf node_modules
 rm -rf migrations
 rm -rf tmp
-rm -rf project/server/static/bower_components
 # Drop database tables using pgAdmin 4.
 ```
 
@@ -95,13 +94,3 @@ rm .python-version
 yarn
 pyenv local 3.6.1
 ```
-
-### Install or Update Frontend Components with Bower
-
-Installation can be done in one of two ways:
-
-1. Run `bower install <package_name> --save` for each package (the `--save` flag adds the dependencies (name and version) to the **bower.json** file.).
-2. Update the **bower.json** file directly with each dependency (again, name and version) and then run `bower install` to install all dependencies from the file.
-
-Updating can be done by editing the versions in **bower.json**. Then rerunning `bower install` (optionally delete the **bower_components** folder).
-

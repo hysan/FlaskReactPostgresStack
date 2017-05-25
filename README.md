@@ -6,7 +6,6 @@ This is a boilerplate project built around these core technologies:
 * React.js
 * PostgresSQL
 * webpack
-* Bower
 * Babel
 * PyJWT
 * SQLAlchemy
@@ -34,7 +33,7 @@ This is what we will write the frontend code in. The View in MVC.
 
 This is the chosen database for this stack. While SQLite or MariaDB is also possible, PostgresSQL was chosen because it can scale to a fairly large size without intervention and is easily managed. Combined with Flask and SQLAlchemy, we can also create, migrate, and backup databases very easily.
 
-**yarn, webpack, Bower, Babel**
+**yarn, webpack, Babel**
 
 These will handle management of frontend Javascript packages and compiling them to be usable by Flask. This includes installing and updating.
 
@@ -79,7 +78,6 @@ pip install -r requirements.txt
 #     https://github.com/electron-userland/electron-builder/issues/638
 rm .python-version
 yarn
-bower install
 # Put pyenv back:
 pyenv local 3.6.1
 # Transform and leave webpack running to watch files for changes:
