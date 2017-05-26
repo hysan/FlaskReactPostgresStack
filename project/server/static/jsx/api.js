@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { loginByJWT, getUserData } from '../utils.js';
+import { loginByJWT, getUserData } from '../js/utils.js';
 
 var DemoFetch = React.createClass({
     // sets initial state

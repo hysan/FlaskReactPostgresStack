@@ -5,8 +5,8 @@ var ManifestRevisionPlugin = require('manifest-revision-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'project/server/static/scripts/jsx', 'main.js'),
-        api: path.resolve(__dirname, 'project/server/static/scripts/jsx', 'api.js'),
+        main: path.resolve(__dirname, 'project/server/static/jsx', 'main.js'),
+        api: path.resolve(__dirname, 'project/server/static/jsx', 'api.js'),
         style: path.resolve(__dirname, 'project/server/static/css', 'style.css'),
         react: ['react', 'react-dom']
     },
@@ -55,7 +55,7 @@ module.exports = {
         new ExtractTextPlugin('[name].[chunkhash].css'),
         new ManifestRevisionPlugin(path.resolve(__dirname, 'project/server/static', 'manifest.json'), {
             rootAssetPath: path.resolve(__dirname, 'project/server/static'),
-            ignorePaths: ['/', '/css', '/scripts', '/scss']
+            ignorePaths: ['/', '/css', '/js', '/jsx', '/scss']
         })
     ]
 };
