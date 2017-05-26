@@ -5,14 +5,14 @@ var ManifestRevisionPlugin = require('manifest-revision-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'project/server/static/jsx', 'main.js'),
-        api: path.resolve(__dirname, 'project/server/static/jsx', 'api.js'),
-        style: path.resolve(__dirname, 'project/server/static/css', 'style.css'),
+        main: path.resolve(__dirname, 'project/server/assets/jsx', 'main.js'),
+        api: path.resolve(__dirname, 'project/server/assets/jsx', 'api.js'),
+        style: path.resolve(__dirname, 'project/server/assets/css', 'style.css'),
         react: ['react', 'react-dom']
     },
     output: {
-        path: path.resolve(__dirname, 'project/server/static/build'),
-        publicPath: './static/build/',
+        path: path.resolve(__dirname, 'project/server/static'),
+        publicPath: './static/',
         filename: '[name].[chunkhash].js',
         chunkFilename: '[id].[chunkhash].js'
     },
@@ -53,8 +53,8 @@ module.exports = {
             name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
         }),
         new ExtractTextPlugin('[name].[chunkhash].css'),
-        new ManifestRevisionPlugin(path.resolve(__dirname, 'project/server/static', 'manifest.json'), {
-            rootAssetPath: path.resolve(__dirname, 'project/server/static'),
+        new ManifestRevisionPlugin(path.resolve(__dirname, 'project/server/assets', 'manifest.json'), {
+            rootAssetPath: path.resolve(__dirname, 'project/server/assets'),
             ignorePaths: ['/', '/css', '/js', '/jsx', '/scss']
         })
     ]
