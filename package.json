@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
     "watch": "webpack --progress --watch",
-    "clean": "rm ./project/server/static/scripts/js/*"
+    "clean": "rm ./project/server/static/*"
   },
   "repository": {
     "type": "git",
