@@ -12,6 +12,7 @@ class BaseConfig:
     DEBUG = False
     BCRYPT_LOG_ROUNDS = 13
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    WEBPACK_MANIFEST_PATH = 'static/manifest.json'
 
 
 class DevelopmentConfig(BaseConfig):

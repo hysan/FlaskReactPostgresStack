@@ -6,6 +6,8 @@ from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS, cross_origin
+from flask_webpack import Webpack
+webpack = Webpack()
 
 app = Flask(__name__)
 
@@ -18,6 +20,7 @@ app.config.from_object(app_settings)
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 cors = CORS(app, resources={r"/auth/*": {"origins": "http://localhost:3000"}})
+webpack.init_app(app)
 
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint, url_prefix='/auth')

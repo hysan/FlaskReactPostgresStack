@@ -1,6 +1,6 @@
 {
   "name": "flaskreactpostgresstack",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Boilerplate project for a Flask, React, PostgresSQL stack.",
   "main": "webpack.config.js",
   "scripts": {
@@ -27,7 +27,11 @@
     "webpack": "^2.6.1"
   },
   "dependencies": {
+    "css-loader": "^0.28.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "manifest-revision-webpack-plugin": "^0.4.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "style-loader": "^0.18.1"
   }
 }

@@ -16,7 +16,7 @@ var DemoFetch = React.createClass({
 
     render: function () {
         return (
-            <div>
+            <div className="hello-world">
                 <input
                     type="text"
                     value={this.state.email}
