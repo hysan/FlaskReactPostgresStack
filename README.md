@@ -12,6 +12,7 @@ This is a boilerplate project built around these core technologies:
 * psycopg2
 * yarn
 * Flask-CORS
+* Flask-Webpack
 
 The responsibilities split into groups are as follows:
 
@@ -24,6 +25,7 @@ This is the web server that gives us the ability to:
 3. Communicate to a database - in this case, PostgresSQL via SQLAlchemy ORM & psycopg2
 4. Protect our site with JWT via PyJWT - implemented in the boilerplate already
 5. Optionally allow CORS to specified resources.
+6. Automatic caching (if configured) by having transpiled asset files with hashes in the name (via Flask-Webpack).
 
 **React.js**
 
@@ -49,6 +51,7 @@ These will handle management of frontend Javascript packages and compiling them 
 8. webpack + yarn scripts to watch for dev changes
 9. yarn scripts for commmon tasks
 10. CORS support
+11. Hashed filenames that are automatically converted in templates via Flask-Webpack
 
 ### Babel Presets and Plugins
 

@@ -40,16 +40,18 @@
 │   │   ├── route
 │   │   │   ├── __init__.py
 │   │   │   └── views.py
-│   │   ├── static
+│   │   ├── assets
 │   │   │   ├── css
 │   │   │   │   └── style.css
-│   │   │   └── scripts
-│   │   │       ├── js
-│   │   │           ├── main.js
-│   │   │       │   └── api.js
-│   │   │       └── jsx
-│   │   │           ├── main.js
-│   │   │           └── api.js
+│   │   │   ├── js
+│   │   │   |   ├── main.js
+│   │   │   │   └── api.js
+│   │   │   ├── jsx
+│   │   │   |   ├── main.js
+│   │   │   |   └── api.js
+|   |   |   └── manifest.json
+│   │   ├── static
+|   |   |   └── <many transpiled files>
 │   │   └── templates
 │   │       ├── hello.html
 │   │       ├── index.html
@@ -94,18 +96,18 @@
         * **route**
             * Example module showing hot to use Blueprints along with the normal route decorators.
             * This is probably the best way to separate normal web view code cleanly.
-        * **static**
+        * **assets**
             * Holds all traditional static files that need to be served by Flask.
+            * These files are not served directly. Instead they are transpiled by `webpack` and then placed in the **static** folder which is then served.
+            * This is also where your **manifest.json** file is placed when running `webpack -p`.
             * **css**
                 * Holds all css files.
-            * **scripts**
-                * Holds all Javascript and related files.
-                * **js**
-                    * Straight up Javascript files written by you.
-                    * Also the place where `webpack` will place the transformed *jsx* files.
-                * **jsx**
-                    * Holds all React.js files.
-                    * Files here will be transformed by running `webpack -p`.
+            * **js**
+                * Straight up Javascript files written by you.
+                * Also the place where `webpack` will place the transformed *jsx* files.
+            * **jsx**
+                * Holds all React.js files.
+                * Files here will be transformed by running `webpack -p`.
         * **templates**
             * Holds all *HTML* files.
             * These are the files that can be rendered directly via Flask's `render_template` function.
@@ -144,7 +146,7 @@ Only key, non-self explanatory files will be covered.
 * **webpack.config.js**
     * All configuration for webpack - plugins, transforms, etc.
     * Shortcuts for the various webpack commands will be added to **package.json** as `yarn run` scripts.
-    * For this project, webpack is used with Babel + plugins to transform the files in **project/server/static/scrips/jsx** into Javascript files. It also separates out vendor files like _react_ and _react-dom_ so code can be shared.
+    * For this project, webpack is used with Babel + plugins to transform the files in **project/server/assets** into Javascript files. It also separates out vendor files like _react_ and _react-dom_ so code can be shared.
 * **project/server/config.py**
     * Contains all configuration for the Flask app.
     * Of importance are the PostgreSQL configs and your SECRET_KEY.
@@ -155,4 +157,5 @@ Only key, non-self explanatory files will be covered.
 * **project/tests/test_something.py**
     * Every test file will be run as a unit test with `python manage.py test` or `python manage.py cov`.
     * My naming convention will be to use *test_* as the prefix to my unit test files.
-
+* **project/server/assets/manifest.json**
+    * This is the manifest file created when you run `webpack -p` that allows *Flask-Webpack* to know how to match the raw asset filename with the latest transpiled version that has the hash in the filename.
