@@ -24,14 +24,14 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
-    "webpack": "^2.6.1"
-  },
-  "dependencies": {
     "css-loader": "^0.28.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "manifest-revision-webpack-plugin": "^0.4.0",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "style-loader": "^0.18.1"
+    "react-dom": "^15.5.4"
   }
 }
