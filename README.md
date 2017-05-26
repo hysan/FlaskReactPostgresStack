@@ -47,7 +47,7 @@ These will handle management of frontend Javascript packages and compiling them 
 6. Javascript Package Management
 7. Python pip management via requirements.txt
 8. webpack + yarn scripts to watch for dev changes
-9. Helper scripts for commmon tasks
+9. yarn scripts for commmon tasks
 10. CORS support
 
 ### Babel Presets and Plugins
@@ -74,9 +74,6 @@ cd ~/<project root>
 pyenv local 3.6.1
 pip install -r requirements.txt
 # Install frontend libraries:
-# Note: You cannot use pyenv here due to this bug:
-#     https://github.com/electron-userland/electron-builder/issues/638
-rm .python-version
 yarn
 # Put pyenv back:
 pyenv local 3.6.1
@@ -161,17 +158,6 @@ With coverage:
 ```sh
 $ python manage.py cov
 ```
-
-## Helper Scripts
-
-These are all shortcut scripts for setting environment variables, running the server, tests, etc. They are not needed, but they are named in a way to help you quickly just do things. To use them, you must use dot space syntax to call the scripts:
-
-```sh
-cd <project root>
-. ./scripts/export-development
-```
-
-This is so that the scripts that set environment variables will affect the current shell (instead of the cloned temp shell that scripts run in). This is similar to using source in bash shell but should work for all types of shells. [See explanation here.](http://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell)
 
 ## Sources
 

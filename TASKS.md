@@ -86,11 +86,7 @@ pip freeze > requirements.txt
 
 ### Install node modules
 
-One of our required node modules [doesn't play nicely with pyenv & shims](https://github.com/electron-userland/electron-builder/issues/638), so we need to disable pyenv while installing and then put it back:
-
 ```sh
 cd <project root>
-rm .python-version
 yarn
-pyenv local 3.6.1
 ```

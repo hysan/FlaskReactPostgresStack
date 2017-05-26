@@ -63,15 +63,6 @@
 │       ├── test_example.py
 │       └── test_user_model.py
 ├── requirements.txt
-├── scripts
-│   ├── export-development
-│   ├── export-secret-key
-│   ├── initialize-databases
-│   ├── install-python-requirements
-│   ├── migrate-databases
-│   ├── run-server
-│   ├── run-tests
-│   └── run-tests-with-coverage
 └── tmp
     └── <bunch of folders>
 ```
@@ -120,9 +111,6 @@
             * These are the files that can be rendered directly via Flask's `render_template` function.
     * **tests**
         * Holds all Python unit tests for the Flask project.
-* **scripts**
-    * Holds my shortcut shell scripts for running common development commands.
-    * Also has scripts for setting environment variables.
 * **tmp**
     * **.gitignore**
     * A temp folder that is generated when you run unit tests with code coverage.
@@ -144,6 +132,7 @@ Only key, non-self explanatory files will be covered.
     * Manages all the backend Javascript dependencies that this project has.
     * For example: bower, webpack, babel, etc.
     * These are all node packages that will be installed when you run `yarn`.
+    * This is also where all of our `yarn run` scripts are configured for shortcut commands.
 * **yarn.lock**
     * Has information about dependencies that you need for yarn.
     * Need to check this into version control.

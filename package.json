@@ -4,10 +4,24 @@
   "description": "Boilerplate project for a Flask, React, PostgresSQL stack.",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p",
-    "watch": "webpack --progress --watch",
-    "clean": "rm ./project/server/static/*"
+    "build":      "webpack -p",
+    "watch":      "webpack --progress --watch",
+    "clean":      "rm ./project/server/static/*",
+    "wipe":       "yarn run clean && rm -rf node_modules && rm -rf migrations && rm -rf tmp",
+    "test":       "python manage.py test",
+    "test:cov":   "python manage.py cov",
+    "setup":      "yarn && yarn run setup:py",
+    "setup:py":   "yarn run env:py && pip install -r requirements.txt",
+    "freeze":     "pip freeze > requirements.txt",
+    "initdb":     "python manage.py create_db && python manage.py db init && python manage.py db migrate",
+    "migrate":    "python manage.py db migrate",
+    "flask":      "python manage.py runserver",
+    "flask:dev":  "yarn run env-dev python manage.py runserver",
+    "flask:prod": "yarn run env-prod python manage.py runserver",
+    "env:dev":    "APP_SETTINGS=\"project.server.config.DevelopmentConfig\"",
+    "env:prod":   "APP_SETTINGS=\"project.server.config.ProductionConfig\"",
+    "env:py":     "pyenv local 3.6.1",
+    "env:clear":  "rm .python-version && unset APP_SETTINGS"
   },
   "repository": {
     "type": "git",
