@@ -1,6 +1,6 @@
 {
   "name": "flaskreactpostgresstack",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Boilerplate project for a Flask, React, PostgresSQL stack.",
   "main": "webpack.config.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "freeze":     "pip freeze > requirements.txt",
     "initdb":     "python manage.py create_db && python manage.py db init && python manage.py db migrate",
     "migrate":    "python manage.py db migrate",
+    "upgrade":    "python manage.py db upgrade",
     "flask":      "python manage.py runserver",
     "flask:dev":  "yarn run env:dev python manage.py runserver",
     "flask:prod": "yarn run env:prod python manage.py runserver",

@@ -35,6 +35,7 @@ python manage.py db migrate
 
 ```sh
 python manage.py db migrate
+python manage.py db upgrade
 ```
 
 ### Set Environment Variables

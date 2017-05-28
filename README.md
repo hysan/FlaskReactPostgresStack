@@ -9,6 +9,7 @@ This is a boilerplate project built around these core technologies:
 * Babel
 * PyJWT
 * SQLAlchemy
+* Flask-Migrate
 * psycopg2
 * yarn
 * Flask-CORS
@@ -26,6 +27,7 @@ This is the web server that gives us the ability to:
 4. Protect our site with JWT via PyJWT - implemented in the boilerplate already
 5. Optionally allow CORS to specified resources.
 6. Automatic caching (if configured) by having transpiled asset files with hashes in the name (via Flask-Webpack).
+7. Create database versions with migrations and upgrades easily with Flask-Migrate.
 
 **React.js**
 
@@ -116,12 +118,18 @@ $ psql
 # \q
 ```
 
-Create the tables and run the migrations:
+Create the tables and run the migrations to create the initial database config from which all migrations will be based off of:
 
 ```sh
 $ python manage.py create_db
 $ python manage.py db init
 $ python manage.py db migrate
+```
+
+Anytime you want to upgrade the database table, run a migrate and then apply the upgrades after reviewing the changes:
+```sh
+$ python manage.py db migrate
+$ python manage.py db upgrade
 ```
 
 ### Run the Application
