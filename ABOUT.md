@@ -77,6 +77,7 @@
 * **migrations**
     * **.gitignore**
     * Generated when you create and/or migrate databases via **manage.py**.
+    * According to the [Flask-Migrate](https://github.com/miguelgrinberg/Flask-Migrate) docs, you should check this folder into source control to track all changes to your database.
 * **node_modules**
     * **.gitignore**
     * Generated when you run `yarn`.

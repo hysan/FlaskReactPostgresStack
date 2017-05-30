@@ -11,7 +11,6 @@ __pycache__
 .DS_Store
 .git
 env.sh
-migrations
 
 node_modules/
 npm-debug.log
