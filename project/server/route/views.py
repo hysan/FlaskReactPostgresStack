@@ -17,10 +17,10 @@ def example_template_route():
 
 @route_blueprint.route("/jwt")
 @jwt_auth(return_user_id=True)
-def example_route(user_id):
+def example_route_with_jwt(user_id):
     return 'hello world route with user_id: {0}'.format(user_id)
 
 @route_blueprint.route('/jwtindex')
 @jwt_auth()
-def example_template_route():
+def example_template_route_with_jwt():
     return render_template('index.html')
