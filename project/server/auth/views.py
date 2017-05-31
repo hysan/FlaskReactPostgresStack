@@ -6,6 +6,7 @@ from flask.views import MethodView
 
 from project.server import bcrypt, db
 from project.server.models import User, BlacklistToken
+from project.server.auth.decorators import jwt_auth
 
 auth_blueprint = Blueprint('auth', __name__)
 
@@ -95,41 +96,23 @@ class LoginAPI(MethodView):
             return make_response(jsonify(responseObject)), 500
 
 class UserAPI(MethodView):
+    decorators = [jwt_auth(return_user_id=True)]
+
     """
     User Resource
     """
-    def get(self):
-        # get the auth token
-        auth_header = request.headers.get('Authorization')
-        if auth_header:
-            auth_token = auth_header.split(" ")[1]
-        else:
-            auth_token = ''
-        if auth_token:
-            resp = User.decode_auth_token(auth_token)
-            if not isinstance(resp, str):
-                user = User.query.filter_by(id=resp).first()
-                responseObject = {
-                    'status': 'success',
-                    'data': {
-                        'user_id': user.id,
-                        'email': user.email,
-                        'admin': user.admin,
-                        'registered_on': user.registered_on
-                    }
-                }
-                return make_response(jsonify(responseObject)), 200
-            responseObject = {
-                'status': 'fail',
-                'message': resp
+    def get(self, user_id):
+        user = User.query.filter_by(id=user_id).first()
+        responseObject = {
+            'status': 'success',
+            'data': {
+                'user_id': user.id,
+                'email': user.email,
+                'admin': user.admin,
+                'registered_on': user.registered_on
             }
-            return make_response(jsonify(responseObject)), 401
-        else:
-            responseObject = {
-                'status': 'fail',
-                'message': 'Provide a valid auth token.'
-            }
-            return make_response(jsonify(responseObject)), 401
+        }
+        return make_response(jsonify(responseObject)), 200
 
 class LogoutAPI(MethodView):
     """
