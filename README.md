@@ -55,6 +55,11 @@ These will handle management of frontend Javascript packages and compiling them 
 10. CORS support
 11. Hashed filenames that are automatically converted in templates via Flask-Webpack
 
+## Functionality Left Out
+
+1. No choices are made on how to design your app.
+2. That also means no CSS Frameworks, Preprocessors, Postprocessors (except the universal basics), or Inline Styles decisions are made for you. That should be customized per project in my opinion.
+
 ### Babel Presets and Plugins
 
 We use Babel to transform our Javascript code via webpack. Babel has a lot of useful options and can help us control what future features we want to support in our Javascript code. The current configuration in our webpack config has Babel supporting the following:
